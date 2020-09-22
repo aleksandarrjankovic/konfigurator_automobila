@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motori</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <!--<link rel="stylesheet" href="css/lightcase.css">-->
+    <link rel="stylesheet" href="css/template-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  </head>
+
+  <body class="size-1140">
+    <div id="page-wrapper">
+      <header role="banner" class="position-absolute margin-top-30 margin-m-top-0 margin-s-top-0">
+        <nav class="background-transparent background-transparent-hightlight full-width sticky">
+          <div class="s-12 l-2">
+            <a href="/" class="logo">
+              <img style="width:100px;height:100px;" class="logo-before" src="img/logo-dark.png" alt="">
+              <img style="width:50px;height:50px;" class="logo-after" src="img/logo-dark.png" alt="">
+            </a>
+          </div>
+          <div class="s-12 l-10">
+            <div class="top-nav right">
+              <p class="nav-text"></p>
+              <ul class="right chevron">
+                <li><a href="/">Pocetna</a></li>
+                <li><a href="/autolista">Konfigurator</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+       <main role="main">
+        <article>
+          <header class="section background-white">
+            <div class="line text-center">
+            </header>
+                    <div class="line text-center">
+                    <h1 class="text-dark text-s-size-25 text-m-size-30 text-l-size-headline text-thin text-line-height-1"><%= car %></h1><br></div>
+                    <section id="mainContainer">
+                      <% auto.forEach( function( car ){ %>
+                        <div class="row">
+                          <div class="contentItem">
+                            <img src="img/korisnik/motor.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Motor</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"><%= car.motor %></p></div>
+                          </div>
+                          <div class="contentItem">
+                            <img src="img/korisnik/menjac.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Menjač</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"><%= car.menjac %></p></div>
+                          </div>
+                          <div class="contentItem">
+                            <img src="img/korisnik/gorivo.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Gorivo</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"><%= car.gorivo %></p></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="contentItem">
+                            <img src="img/korisnik/pogon.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Pogon</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"><%= car.pogon %></p></div>
+                          </div>
+                          <div class="contentItem">
+                            <img src="img/korisnik/boja.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Boja</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"><%= car.boje %></p></div>
+                          </div>
+                          <div class="contentItem">
+                            <img src="img/korisnik/felne.png" width="67px" height="57px" />
+                            <div class="titleStyle"><p class="fontStylee">Felne</p></div>
+                            <div class="itemDescription">
+                            <p class="texttext"> <%= car.felne %></p></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <%if(car.dodatna_oprema==1) {%>
+                          <div class="contentItem">
+                            <div class="titleStyle"><p class="fontStylee">Dodatna Oprema</p></div>
+                            <img src="img/oprema/paket1.png" width="350px" height="303px"/>
+                          </div>
+                          <% } else if(car.dodatna_oprema==2){ %>
+                            <div class="contentItem">
+                              <div class="titleStyle"><p class="fontStylee">Dodatna Oprema</p></div>
+                              <img src="img/oprema/paket2.png" width="350px" height="303px"/>
+                            </div>
+                          <% } %>
+                          <div class="contentItem">
+                            <div class="titleStyle"><p class="fontStylee">Cena</p></div>
+                            <div class="itemDescription">
+                            <h4><%= car.cena %> €</h4></div>
+                          </div>
+                          <div class="contentItem">
+                            <div><p class="texttext textJustify">Potvrdite ovde vašu konfiguraciju da bi ste dobili gerenirasni kod.</p></div></br>
+                            <button id="myBtn" class="btn btn-outline-primary btn-lg btn-block" >Potvrdi</button>
+                          </div>
+                        </div>
+                        <div id="myModal" class="modalmodal">
+                          <div class="modal-contentModal">
+                            <span class="close">&times;</span></br>
+                            <p class="textJustify">Uspešno ste generisali vaš jedinstveni kod kojem je uspešno sačuvana vaša konfiguracija automibila. Možete preuzeti vaš automobil na adresi Obrenovićeva br. 6
+                                Niš - Srbija.</p>
+                                <p>Vaš kod : <h6><%= car.kod %></h6></p>
+                          </div>
+                        </div>
+                        <% }) %>
+                  </section>
+          </main>
+    </div>
+  </body>
+  <footer>
+        <div class="background-dark padding text-center footer-social">
+          <a class="margin-right-10" target="_blank" href="https://www.facebook.com"><i class="icon-facebook_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">FACEBOOK</span></a>
+          <a class="margin-right-10" target="_blank" href="https://www.twitter.com"><i class="icon-twitter_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">TWITTER</span></a>
+          <a class="margin-right-10" target="_blank" href="https://www.instagram.com"><i class="icon-instagram_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">INSTAGRAM</span></a>
+        </div>
+        <section class="section-small-padding text-center background-dark full-width">
+          <div class="line">
+            <div class="margin">
+              <div class="s-12 m-12 l-4 margin-m-bottom-30">
+                <h3 class="text-size-16">Adresa</h3>
+                <p class="text-size-14">
+                   Obrenovićeva br 6<br>
+                   Niš - Srbija<br>
+                </p>
+              </div>
+              <div class="s-12 m-12 l-4 margin-m-bottom-30">
+                <h3 class="text-size-16">E-mail</h3>
+                <p class="text-size-14">
+                   konfigurator@konfigurator.com<br>d
+                </p>
+              </div>
+              <div class="s-12 m-12 l-4 ">
+                <h3 class="text-size-16">Brojevi telefona</h3>
+                <p class="text-size-14">
+                   060 0000 000<br>
+                   018 000 000<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 0, 0, 0.80);">
+
+
+        <section class="padding background-dark full-width">
+          <div class="text-center">
+            <p class="text-size-12">Copyright 2020</p>
+            <p class="text-size-12">Akademija tehničko-vaspitačkih strukovnijh studija</p>
+          </div>
+        </section>
+      </footer>
+    </div>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="js/korisnik.js"></script>
+    <script type="text/javascript" src="js/jquery.events.touch.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

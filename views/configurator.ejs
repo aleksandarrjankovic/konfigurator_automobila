@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motori</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/lightcase.css">
+    <link rel="stylesheet" href="css/template-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  </head>
+  <body class="size-1140">
+    <form action="/konfigurator" method="POST">
+    <div id="page-wrapper">
+      <header role="banner" class="position-absolute margin-top-30 margin-m-top-0 margin-s-top-0">
+        <nav class="background-transparent background-transparent-hightlight full-width sticky">
+          <div class="s-12 l-2">
+            <a href="/" class="logo">
+              <img style="width:100px;height:100px;" class="logo-before" src="img/logo-dark.png" alt="">
+              <img style="width:50px;height:50px;" class="logo-after" src="img/logo-dark.png" alt="">
+            </a>
+          </div>
+          <div class="s-12 l-10">
+            <div class="top-nav right">
+              <p class="nav-text"></p>
+              <ul class="right chevron">
+                <li><a href="/">Pocetna</a></li>
+                <li><a href="/autolista">Konfigurator</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+       <main role="main">
+        <article>
+          <header class="section background-white">
+            <div class="line text-center">
+              <h1 class="text-dark text-s-size-25 text-m-size-30 text-l-size-headline text-thin text-line-height-1"><%= car %></h1><br>
+              <div class="container">
+                <div class="row">
+                  <div class="col-6 col-md-4">
+                    <!--Boje-->
+                    <section>
+                      <h4 text-dark text-l-size-headline text-thin text-line-height-1 >Eksterijer i Enterijer</h4>
+                      <p class="text-size-20">Standarne boje</p>
+                      <div class="hiddenradio">
+                        <label>
+                          <input type="radio" name="boje" value="Crna" required>
+                          <img src="img/black.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje" value="Bela" required>
+                          <img src="img/white.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje" value="Crvena" required>
+                          <img src="img/red.png">
+                        </label>
+                      </div>
+                      <p class="text-size-20">Metalic boje</p>
+                      <div class="hiddenradio">
+                        <label>
+                          <input type="radio" name="boje" value="Bela Metalic" required>
+                          <img src="img/white_metalic.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje" value="Crna Metalic" required>
+                          <img src="img/black_metalic.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje" value="Siva Metalic" required>
+                          <img src="img/gray_metalic.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje" value="Plava Metalic" required>
+                          <img src="img/blue_metalic.png">
+                        </label>
+                        <label>
+                          <input type="radio" name="boje">
+                          <img src="img/nightblue.png" value="Tamno Plava Metalic">
+                        </label>
+                      </div>
+                      <button></button>
+                    </section>
+                    <!--felne-->
+                    <section>
+                      <h4 text-dark text-l-size-headline text-thin text-line-height-1 >Felne</h4>
+                      <div class="hiddenradio">
+                      <label>
+                        <input type="radio" name="felne" value="18inch-a" required>
+                        <img src="img/felne/f1.png">
+                      </label>
+                      <label>
+                        <input type="radio" name="felne" value="19inch-a" required>
+                        <img src="img/felne/f2.png">
+                      </label>
+                      <label>
+                        <input type="radio" name="felne" value="20inch-a" required>
+                        <img src="img/felne/f3.png">
+                      </label>
+                      <label>
+                        <input type="radio" name="felne" value="22inch-a" required>
+                        <img src="img/felne/f4.png">
+                      </label>
+                    </div>
+                    </section>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <section>
+                        <h4 text-dark text-l-size-headline text-thin text-line-height-1 >Gorivo, Pogon, Motor, Menjač</h4>
+                        <p class="text-size-20">Motor (Zapremina i Snaga)</p>
+                        <span class="custom-dropdown">
+                          <select name="motor" required>
+                            <option value="">Izaberi</option>
+                            <option value = "1.6 110KS">[1.6 110KS]</option>
+                            <option value = "2.0 140KS">[2.0 140KS]</option>
+                            <option value = "1.4 100KS">[1.4 100KS]</option>
+                            <option value = "1.9 135KS">[1.9 135KS]</option>
+                            <option value = "4.0 V8 470KS">[4.0 V8 600KS]</option>
+                              <option value = "5.2V8 470KS">[5.2 V8 600KS]</option>
+                          </select>
+                        </span>
+                        <p class="text-size-20">Pogon</p>
+                        <span class="custom-dropdown">
+                          <select name="pogon" required>
+                            <option value="">Izaberi</option>
+                            <option value = "FWD [2x2]">FWD [2x2]</option>
+                            <option value = "AWD [4x4]">AWD [4x4]</option>
+                          </select>
+                        </span>
+                        <p class="text-size-20">Menjač</p>
+                        <span class="custom-dropdown">
+                          <select name="menjac" required>
+                            <option value="">Izaberi</option>
+                            <option value = "Manuelni">Manuelni</option>
+                            <option value = "Automatski">Automatski</option>
+                          </select>
+                        </span>
+                        <p class="text-size-20">Gorivo</p>
+                        <span class="custom-dropdown">
+                          <select name="gorivo" required>
+                            <option value="">Izaberi</option>
+                            <option value = "Benzin" >Benzin</option>
+                            <option value = "Dizel" >Dizel</option>
+                          </select>
+                        </span>
+                      </section>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <section>
+                          <h4 text-dark text-l-size-headline text-thin text-line-height-1 >Dodatna operma</h4>
+                          <label>
+                            <div class="hiddenradio">
+                            <p class="text-size-15">Premium paket</p>
+                            <input type="radio" name="dodatna_oprema" value="1" required>
+                              <img src="img/oprema/paket1.png">
+                          </label>
+                          <label>
+                            <div class="hiddenradio">
+                            <p class="text-size-15">Premium Plus paket</p>
+                            <input type="radio" name="dodatna_oprema" value="2" required>
+                            <img src="img/oprema/paket2.png">
+                          </label>
+                        </div>
+                      </br>  </br>
+                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Dalje</button>
+                    </section>
+                  </div>
+                </div>
+            </div>
+          </header>
+      </main>
+  <footer>
+        <div class="background-dark padding text-center footer-social">
+          <a class="margin-right-10" target="_blank" href="https://www.facebook.com"><i class="icon-facebook_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">FACEBOOK</span></a>
+          <a class="margin-right-10" target="_blank" href="https://www.twitter.com"><i class="icon-twitter_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">TWITTER</span></a>
+          <a class="margin-right-10" target="_blank" href="https://www.instagram.com"><i class="icon-instagram_circle text-size-30"></i> <span class="text-strong text-white hide-s hide-m">INSTAGRAM</span></a>
+        </div>
+        <section class="section-small-padding text-center background-dark full-width">
+          <div class="line">
+            <div class="margin">
+              <div class="s-12 m-12 l-4 margin-m-bottom-30">
+                <h3 class="text-size-16">Adresa</h3>
+                <p class="text-size-14">
+                   Obrenovićeva br 6<br>
+                   Niš - Srbija<br>
+                </p>
+              </div>
+              <div class="s-12 m-12 l-4 margin-m-bottom-30">
+                <h3 class="text-size-16">E-mail</h3>
+                <p class="text-size-14">
+                   konfigurator@konfigurator.com<br>d
+                </p>
+              </div>
+              <div class="s-12 m-12 l-4 ">
+                <h3 class="text-size-16">Brojevi telefona</h3>
+                <p class="text-size-14">
+                   060 0000 000<br>
+                   018 000 000<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 0, 0, 0.80);">
+
+
+        <section class="padding background-dark full-width">
+          <div class="text-center">
+            <p class="text-size-12">Copyright 2020</p>
+            <p class="text-size-12">Akademija tehničko-vaspitačkih strukovnijh studija</p>
+          </div>
+        </section>
+      </footer>
+    </div>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="js/jquery.events.touch.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
